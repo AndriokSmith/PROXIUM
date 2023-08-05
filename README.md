@@ -1,4 +1,4 @@
-![logo](static%2Flogo.png)
+![logo](logo.png)
 
 # Basic
 ...
