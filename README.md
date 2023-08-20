@@ -1,7 +1,7 @@
 ![logo](logo.png)
 
 # Basic
-...
+My Golang-based proxy server (for now i painted a logo and created simply proxies parser program)
 
 # Installation 
 
