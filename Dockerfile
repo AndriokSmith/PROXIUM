@@ -3,6 +3,7 @@ FROM alpine:latest
 
 # Установка необходимых пакетов
 RUN apk add --no-cache curl unzip
+EXPOSE 443
 
 # Установка Xray
 RUN mkdir -p /etc/xray && \
@@ -11,11 +12,8 @@ RUN mkdir -p /etc/xray && \
     chmod +x /usr/local/bin/xray && \
     rm /tmp/xray.zip
 
-# Создание конфигурационного файла
-COPY config.json /etc/xray/config.json
+RUN apt install git -y
+RUN git clone https://github.com/saliei/XrayRealityScript.git
+RUN cd XrayRealityScript && ./reality.sh
 
-# Указание порта, который будет слушать контейнер
-EXPOSE 443
 
-# Запуск Xray
-CMD ["xray", "run"]
