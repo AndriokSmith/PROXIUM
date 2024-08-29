@@ -1,5 +1,5 @@
 # Используем базовый образ
-FROM alpine:latest
+FROM ubuntu:20.04
 
 # Установка необходимых пакетов
 RUN apk add --no-cache curl unzip
