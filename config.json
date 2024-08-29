@@ -1,0 +1,23 @@
+{
+  "log": {
+    "loglevel": "info"
+  },
+  "inbounds": [{
+    "port": 443,
+    "protocol": "vless",
+    "settings": {
+      "clients": [{
+        "id": "YOUR_UUID",
+        "alterId": 0
+      }]
+    },
+    "streamSettings": {
+      "network": "tcp",
+      "security": "tls"
+    }
+  }],
+  "outbounds": [{
+    "protocol": "freedom",
+    "settings": {}
+  }]
+}
