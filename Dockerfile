@@ -16,9 +16,4 @@ RUN mkdir -p /etc/xray && \
     rm /tmp/xray.zip
 
 # Клонирование репозитория и запуск скрипта
-RUN git clone https://github.com/saliei/XrayRealityScript.git && \
-    cd XrayRealityScript && \
-    ./reality.sh
-
-# Открытие порта
-EXPOSE 443
+RUN git clone https://github.com/saliei/XrayRealityScript.git
