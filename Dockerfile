@@ -2,8 +2,11 @@
 FROM ubuntu:20.04
 
 # Установка необходимых пакетов
-RUN apk add --no-cache curl unzip
-EXPOSE 443
+RUN apt-get update && apt-get install -y \
+    unzip \
+    curl \
+    git && \
+    rm -rf /var/lib/apt/lists/*
 
 # Установка Xray
 RUN mkdir -p /etc/xray && \
@@ -12,8 +15,10 @@ RUN mkdir -p /etc/xray && \
     chmod +x /usr/local/bin/xray && \
     rm /tmp/xray.zip
 
-RUN apt install git -y
-RUN git clone https://github.com/saliei/XrayRealityScript.git
-RUN cd XrayRealityScript && ./reality.sh
+# Клонирование репозитория и запуск скрипта
+RUN git clone https://github.com/saliei/XrayRealityScript.git && \
+    cd XrayRealityScript && \
+    ./reality.sh
 
-
+# Открытие порта
+EXPOSE 443
