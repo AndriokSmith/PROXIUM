@@ -14,6 +14,8 @@ RUN mkdir -p /etc/xray && \
     unzip /tmp/xray.zip -d /usr/local/bin/ && \
     chmod +x /usr/local/bin/xray && \
     rm /tmp/xray.zip
+    
+EXPOSE 443
 
 # Клонирование репозитория и запуск скрипта
 RUN git clone https://github.com/saliei/XrayRealityScript.git
